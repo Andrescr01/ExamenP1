@@ -1,0 +1,31 @@
+<!--
+  Generated template for the MascotasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Remodelaciones</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor= "let mascota of mascotas" col-6>
+        <ion-card (click) = "VerMascota(mascota)">
+         <img *ngIf= "mascota.ad.hasOwnProperty('thumbnail')"
+         src= "https://img.segundamano.mx/cover/{{mascota.ad.thumbnail.path}}">
+
+         <img *ngIf= "!mascota.ad.hasOwnProperty('thumbnail')"
+         src= "../assets/imgs/logo.png">
+         
+         <h2 *ngIf= "mascota.ad.hasOwnProperty('subject')">{{mascota.ad.subject}}</h2>
+         <h2 *ngIf= "mascota.ad.hasOwnProperty('locations')">{{mascota.ad.locations[0].locations[0].label}} {{mascota.ad.locations[0].label}}</h2>
+         <h2 *ngIf= "mascota.ad.hasOwnProperty('list_price')">   {{mascota.ad.list_price.label}}</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

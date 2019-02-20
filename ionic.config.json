@@ -5,7 +5,8 @@
   "proxies":[
     {
       "path": "/v1",
-      "proxyUrl":"https://webapi.segundamano.mx/nga/api/v1/public"
+      "proxyUrl":"https://webapi.segundamano.mx"
+     
     }
   ]
 }
